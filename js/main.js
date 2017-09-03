@@ -135,66 +135,143 @@
 // 6. Modify the below code so that the return value can also be returned with a callback
 // function (if a callback function has been specified).
 
+// (function() {
+//
+//    function isArray(array) {
+//      return typeof(array) === "object" && (array instanceof Array);
+//      }
+//
+//    var result = isArray([
+//        "item1",
+//        "item2",
+//        "item3"
+//        ]);
+//
+//    console.log("isArray: " + result);
+// })();
+
+
+// (function() {
+//
+//    function isArray(array) {
+//      return typeof(array) === "object" && (array instanceof Array);
+//      }
+//
+//    var result = isArray([
+//        "item1",
+//        "item2",
+//        "item3"
+//        ]);
+//
+//    console.log("isArray: " + result);
+//    console.log(isArray);
+// })();
+
+
+
 // I need to hoist the function out of the original
 
-(function() {
-
-    function callBack(){
-      return typeof(array) === "object" && (array instanceof Array);
-    }
-
-     function isArray(array) {
-       return callBack
-     }
-
-     var result = isArray([
-         "item1",
-         "item2",
-         "item3"
-         ]);
-
-   console.log("isArray: " + result);
-
-   console.log(callBack);
-
-})();
+// (function() {
+//
+//     function callBack(){
+//       return typeof(array) === "object" && (array instanceof Array);
+//     }
+//
+//      function isArray(array) {
+//        return callBack
+//      }
+//
+//      var result = isArray([
+//          "item1",
+//          "item2",
+//          "item3"
+//          ]);
+//
+//    console.log("isArray: " + result);
+//
+//    console.log(callBack);
+//
+// })();
 
 
 
 // 7. Optimize the below JavaScript to minimize the number of redraws and reflows required.
+
 // (function() {
-//       var element,
-//        index,
-//        length,
-//        content = document.getElementById(“content”),
-//        data = [{
-//        id: 1,
-//       name: “John”,
-//       color: “green”
-//        }, {
-//        id: 2,
-//       name: “Sally”,
-//       color: “pink”
-//        }, {
-//        id: 3,
-//       name: “Andrew”,
-//       color: “blue”
-//        }, {
-//        id: 4,
-//       name: “Katie”,
-//       color: “purple”
-//        }],
-// for (index = 0; index < data.length; index++) {
-// element = document.createElement(“li”);
-// content.appendChild(element);
-// element.setAttribute(“id”, data[index].id);
-// element.innerHTML = “<strong>” + data[index].name + “</strong>”;
-// element.style.color = data[index].color;
-// }
+//         var element,
+//          index,
+//          length,
+//          content = document.getElementById(“content”),
+//          data = [{
+//              id: 1,
+//             name: "John",
+//             color: "green"
+//              }, {
+//              id: 2,
+//             name: "Sally",
+//             color: "pink"
+//              }, {
+//              id: 3,
+//             name: "Andrew",
+//             color: "blue"
+//              }, {
+//              id: 4,
+//             name: "Katie",
+//             color: "purple"
+//              }],
+//       for (index = 0; index < data.length; index++) {
+//           element = document.createElement(“li”);
+//           content.appendChild(element);
+//           element.setAttribute(“id”, data[index].id);
+//           element.innerHTML = “<strong>” + data[index].name + “</strong>”;
+//           element.style.color = data[index].color;
+//         }
 // })();
 
-// making a change for git check
 
+
+// (function() {
+//         var element,
+//          index,
+//          length,
+//          content = document.getElementById("content"),
+//          data = [{
+//              id: 1,
+//             name: "John",
+//             color: "green"
+//              }, {
+//              id: 2,
+//             name: "Sally",
+//             color: "pink"
+//              }, {
+//              id: 3,
+//             name: "Andrew",
+//             color: "blue"
+//              }, {
+//              id: 4,
+//             name: "Katie",
+//             color: "purple"
+//           }];
+//           console.log(element, index, length, content, data);
+//       for (index = 0; index < data.length; index++) {
+//
+//           // create a li element
+//           element = document.createElement("li");
+//
+//           // append the elements to the content
+//           content.appendChild(element);
+//
+//           //
+//           element.setAttribute("id", data[index].id);
+//
+//           // make the index bold
+//           element.innerHTML = "<strong>" + data[index].name + "</strong>";
+//
+//           // make the index coloured
+//           element.style.color = data[index].color;
+//         }
+// })();
+//
 
 
 // 8. Using the below JavaScript code as a starting point, implement a chain-able DOM
@@ -224,19 +301,25 @@
 // 9. The below JavaScript is used to handle mousemove events amongst 3 divs which are
 // nested inside each other. Find and fix the problem which is causing too many events to
 // get fired.
-// (function() {
-// var boxes = [
-// document.getElementById("box1"),
-// document.getElementById("box2"),
-//  document.getElementById("box3")
-//  ];
-// boxes[0].addEventListener("mousemove", function(event) {
-// console.log("Box 1");
-// });
-// boxes[1].addEventListener("mousemove", function(event) {
-// console.log("Box 2");
-// });
-// boxes[2].addEventListener("mousemove", function(event) {
-// console.log("Box 3");
-// });
-// })();
+
+(function() {
+
+    var boxes = [
+    document.getElementById("box1"),
+    document.getElementById("box2"),
+    document.getElementById("box3")
+     ];
+
+    boxes[0].addEventListener("mousemove", function (event){
+      console.log("Box 1");
+    });
+    boxes[1].addEventListener("mousemove", function(event) {
+      console.log("Box 2");
+    });
+    boxes[2].addEventListener("mousemove", function(event) {
+      console.log("Box 3");
+    });
+
+
+
+})();
